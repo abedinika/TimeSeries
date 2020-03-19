@@ -27,7 +27,7 @@ VARMA method models the next step in each time series using an ARMA model and is
 Vector Autoregression Moving-Average with Exogenous Regressors (VARMAX)
 This method is an extension of VARMA that includes modeling of exogenous variables as well. It is suitable for multivariate time series without trend and seasonal components with exogenous variables. 
 
-Solution
+## Solution
 The technical part of this assignment developed and implemented using python on a machine with specifications defined below:
 - Programming language: Python 3.7.5
 - IDE: PyCharm
@@ -256,23 +256,23 @@ class forecast(models):
             res = self.__calculateMAPE(self.target, yhat)
             print('\n MAPE Error:')
             for i in range(4):
-                print(i + self.dataset.shape[0] + 1, "{0:.2f}".format(res[i]),'%',)
+                print(i + self.dataset.shape[0] + 1, "{0:.2f}".format(res[i]),)
 
             print('\n MAPE Error mean:')
-            print("{0:.2f}".format(np.mean(res)),'%')
+            print("{0:.2f}".format(np.mean(res)))
             print('Predicted values: \n', yhat)
 
 ```
  
-Results
+## Results
 The predictions related to 3 models have been saved in 3 csv files. The MAPE metric for these models described as bellow:
 
 Index | VARMAX | VAR | VARMA
 ------------ | ------------- | -------------| -------------
-44 | 110.66 % | 149.46 % | 97.87 % 
-45 | 32.11 % | 49.71 % | 39.02 %
-46 | 28.63 % | 53.54 % | 35.31 % 
-47 | 132.68 % | 147.88 % | 116.75 %
+44 | 110.66  | 149.46  | 97.87 
+45 | 32.11  | 49.71  | 39.02 
+46 | 28.63  | 53.54 | 35.31  
+47 | 132.68 | 147.88 | 116.75 
 
 
 
