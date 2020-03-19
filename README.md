@@ -5,29 +5,11 @@
 ## Designing A Multivariate Timeseries model
 
 
-
-
-Summary
+## Summary
 In a time series problem, we aim to predict the future based on the data provided in the past. Actually, considering the recent past, we are able to predict the sales or market in the future. In the dataset provided by Au-dela, 3 features are presented as Val_1, Val_2 and Val_3. Despite the few number of available samples in the dataset, some statistical methods employed to predict the 4 steps ahead of the sequence of the data points. It is worth to say that since the performance of system is not matter in the scope of this project, conducting a research on the most common available method for time series prediction is the priority of this report. In addition, the solution aims to illustrate the style of coding on python and using object-oriented programming with respect to solving time series forecasting. With this in mind, the provided solution in both report and code files is not the most effective and recommended algorithm, while deep learning methods such as recurrent neural network based on LSTM architecture would be better mean.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Introduction
+## Introduction
 The dataset consists from 3 features, which cause our problem to be a multivariate timeseries. Generally, different methods are available to be deployed in order to predict the next sequences of data. Some of these classical methods are very close to statistical analysing such as Vector Auto Regressive (VAR), Auto Regressive (AR), ARMA and so on. These models are available using Statsmodels library in python. Also, some Machine Learning models such as GRU, Recurrent Neural Networks (RNN) and Long Short-Term Memories (LSTM) can be utilized as well. 
 In this project the classical methods have been implemented due to lack of time, however one of the best options for this type of problem is LSTM. This solution will be addressed and implemented in further works.
 The classical methods, which have been applied to this problem are listed as follows:
@@ -47,16 +29,16 @@ This method is an extension of VARMA that includes modeling of exogenous variabl
 
 Solution
 The technical part of this assignment developed and implemented using python on a machine with specifications defined below:
-Programming language: Python 3.7.5
-IDE: PyCharm
-OS: Windows 10
-Processor: Intel® Core i7 CPU 2.20GHz 
-RAM: 8.00 GB
-System type: 64-bit Operating System, x64-based processor
-CPU Runtime:
-•	VARMAX model: 0.005 sec
-•	VAR model: 2.87 sec
-•	VARMA model: 0.005 sec
+- Programming language: Python 3.7.5
+- IDE: PyCharm
+- OS: Windows 10
+- Processor: Intel® Core i7 CPU 2.20GHz 
+- RAM: 8.00 GB
+- System type: 64-bit Operating System, x64-based processor
+- CPU Runtime:
+* VARMAX model: 0.005 sec
+* VAR model: 2.87 sec
+* VARMA model: 0.005 sec
 
 To address this problem, three classes have been defined following by a main.py file to run the whole project. These three classes consist of “preprocessing”, “models” and “forecast”. I tried to implement some aspects of OOP in this project such as encapsulation, polymorphism (overloading) and inheritance. Each of these will be explained on the next parts of the report.
 
@@ -66,6 +48,11 @@ Forecast-> models-> Preprocessing
 The “preprocessing” class is sub classed in “models” class and the “models” class is sub classed in “forecast” class. The classes functions are accessible by defining one object from “forecast” class. Also, some of the functions has defined privately in each class.
 
 The path to the file would be defined in main.py file as follow:
+
+'''
+path = 'D:\\Audela Assignment\\dataset.csv'
+ds = pd.read_csv(path, delimiter=';')  # read the dataset
+'''
  
 By creating an object from “forecast” class, the methods from “preprocessing” class is called to perform data preparation phase.
  
