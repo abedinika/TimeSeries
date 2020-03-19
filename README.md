@@ -116,7 +116,8 @@ class preprocessing:
 ```
 
  
-To visualize the trend of features, the draw plot has been called with the dataset parameter:
+To visualize the trend of features, the draw plot function has been called with the dataset parameter:
+![plot](https://raw.githubusercontent.com/abedinika/audela/master/vis.JPG)
  
 Then the models are created via “models” class by calling the “createResult” method
 ```javascript
