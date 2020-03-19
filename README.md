@@ -136,13 +136,14 @@ obj.createResult(obj.select_model('VARMA'), 0)
  
 By selecting VARMAX model from a simulated switch-case function from “models” class, the VARMAX model would be performed. 
 ```javascript
-def select_model(self, i):
-    switcher = {
-        0: self.__VARMAXmodel(self.dataset, 5, 0),  # VARMAX model
-        1: self.__VARmodel(),  # VAR model
-        2: self.__VARMAXmodel(self.dataset, 1)  # VARMA model
-    }
-    return switcher.get(i, "Invalid key of model")
+    def select_model(self, i):
+        switcher = {
+            'VARMAX': self.__VARMAXmodel(self.dataset, 5, 0),  # VARMAX model
+            'VAR': self.__VARmodel(),  # VAR model
+            'VARMA': self.__VARMAXmodel(self.dataset, 1)  # VARMA model
+        }
+        return switcher.get(i, "Invalid key of model")
+
 ```
  
 The VARMAX model has been defined to be performed both as VARMA and VARMAX model, which is based on the number of parameters it receives. Since the order of parameters in VARMA model is (1, 1), the only parameter is passed to this function is 1 for both p and q and when two parameters are passed, the VARMAX model performs.
